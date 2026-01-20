@@ -108,17 +108,6 @@ SmartVisionAI/
 ├── requirements.txt
 └── README.md
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/Elansurya/SmartVisionAI.git
-cd SmartVisionAI
-
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-3️⃣ Run the Application
-streamlit run app/app.py
-
 📦 Requirements
 streamlit
 tensorflow
