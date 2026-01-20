@@ -110,7 +110,7 @@ SmartVisionAI/
 
 ⚙️ Installation & Setup
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/SmartVisionAI.git
+git clone https://github.com/Elansurya/SmartVisionAI.git
 cd SmartVisionAI
 
 2️⃣ Install Dependencies
