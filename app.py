@@ -1,6 +1,3 @@
-
-# SMARTVISION AI 
-
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -974,4 +971,5 @@ elif page == "ℹ️ About":
     """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
     
+
     st.markdown("</div>", unsafe_allow_html=True)
