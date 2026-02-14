@@ -1,7 +1,3 @@
-# SmartVision AI - Preprocessing Module
-# File: src/preprocessing.py
-# Critical preprocessing functions for both training and inference
-
 import numpy as np
 import cv2
 from PIL import Image
@@ -9,9 +5,8 @@ import tensorflow as tf
 from typing import Union, Tuple
 import os
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
+
 
 # ImageNet mean and std (used by pre-trained models)
 IMAGENET_MEAN = np.array([0.485, 0.456, 0.406])
@@ -21,9 +16,8 @@ IMAGENET_STD = np.array([0.229, 0.224, 0.225])
 IMG_SIZE_CLASSIFICATION = (224, 224)
 IMG_SIZE_DETECTION = (640, 640)
 
-# ============================================================================
 # IMAGE LOADING & VALIDATION
-# ============================================================================
+
 
 def load_image(image_path: Union[str, Image.Image]) -> np.ndarray:
     """
@@ -75,10 +69,8 @@ def validate_image(img: np.ndarray) -> bool:
     
     return True
 
-
-# ============================================================================
 # CLASSIFICATION PREPROCESSING
-# ============================================================================
+
 
 def preprocess_for_classification(
     image: Union[str, Image.Image, np.ndarray],
@@ -156,10 +148,7 @@ def batch_preprocess_classification(
     # Stack into batch
     return np.array(processed_images)
 
-
-# ============================================================================
 # DETECTION PREPROCESSING (YOLO)
-# ============================================================================
 
 def preprocess_for_detection(
     image: Union[str, Image.Image, np.ndarray],
@@ -244,10 +233,8 @@ def letterbox_resize(
     
     return padded
 
-
-# ============================================================================
 # DATA AUGMENTATION (for training)
-# ============================================================================
+
 
 def augment_image(
     img: np.ndarray,
@@ -305,10 +292,8 @@ def augment_image(
     
     return augmented
 
-
-# ============================================================================
 # POST-PROCESSING
-# ============================================================================
+
 
 def denormalize_image(img: np.ndarray) -> np.ndarray:
     """
@@ -354,10 +339,8 @@ def scale_boxes(
     
     return scaled_boxes
 
-
-# ============================================================================
 # UTILITY FUNCTIONS
-# ============================================================================
+
 
 def get_image_info(image: Union[str, np.ndarray]) -> dict:
     """
@@ -422,10 +405,7 @@ def visualize_preprocessing(
     plt.tight_layout()
     plt.show()
 
-
-# ============================================================================
 # MAIN PREPROCESSING PIPELINE
-# ============================================================================
 
 class PreprocessingPipeline:
     """
@@ -462,9 +442,8 @@ class PreprocessingPipeline:
             return preprocess_for_detection(image, self.target_size)[0]
 
 
-# ============================================================================
 # EXAMPLE USAGE
-# ============================================================================
+
 
 if __name__ == "__main__":
     print("="*80)
@@ -494,5 +473,6 @@ if __name__ == "__main__":
     print(f"   Augmented shape: {augmented.shape}")
     print()
     
-    print("✅ All preprocessing functions working correctly!")
+    print(" All preprocessing functions working correctly!")
+
     print("="*80)
